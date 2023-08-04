@@ -1,0 +1,55 @@
+:root {
+	--background: #c5f6db;
+	--background-card: #49cac4;
+	--background-footer: #6c4b4d;
+	--color-primary: #bb1c24;
+	--color-secondary: #853d41;
+}
+
+html {
+	background-color: var(--background);
+	box-sizing: border-box;
+	font-size: 10px;
+}
+
+.primary {
+	color: var(--color-primary);
+}
+
+.background-card {
+	background-color: var(--background-card);
+}
+
+#sect-banner {
+	background-image: url('./assets/img-banner.jpg');
+	background-position: 0;
+	background-size: cover;
+	height: 100px;
+}
+
+.container {
+	display: flex;
+
+	& .feature-part {
+		width: 50%;
+
+		& p {
+			color: var(--color-secondary);
+		}
+	}
+
+	& img {
+		height: auto;
+		width: 100%;
+	}
+}
+
+/* #banner-img {
+	height: 100px;
+	object-fit: cover;
+} */
+
+footer {
+	background-color: var(--background-footer);
+	height: 200px;
+}
