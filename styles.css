@@ -1,55 +1,102 @@
 :root {
-	--background: #c5f6db;
-	--background-card: #49cac4;
-	--background-footer: #6c4b4d;
-	--color-primary: #bb1c24;
-	--color-secondary: #853d41;
+	--background: #f7f7f7;
+	--background-card: #eaeaea;
+	--background-footer: #b40a1d;
+	--color-primary: #ec1224;
+	--color-secondary: white;
+	--color-content: #333333;
+	--font-lg: 5rem;
+	--font-md: 3.5rem;
+	--font-sm: 2rem;
+	--margin-content: 0 8rem; /* used for padding in footer */
+	--padding-content: 0 6rem;
+	--border-line: 2px solid #ec1224;
 }
 
-html {
-	background-color: var(--background);
-	box-sizing: border-box;
-	font-size: 10px;
+/* CSS classes */
+
+.card {
+	background-color: var(--background-card);
+	border-radius: 50px;
+	color: var(--color-content);
+	padding: 2rem 6rem;
+}
+
+.flex {
+	display: flex;
+}
+
+.font-large {
+	font-size: var(--font-lg);
+}
+
+.font-medium {
+	font-size: var(--font-md);
+}
+
+.font-small {
+	font-size: var(--font-sm);
 }
 
 .primary {
 	color: var(--color-primary);
 }
 
-.background-card {
-	background-color: var(--background-card);
+/*  */
+
+html {
+	background-color: var(--background);
+	box-sizing: border-box;
+	font-family: 'Open Sans';
+	font-size: 10px;
 }
 
-#sect-banner {
-	background-image: url('./assets/img-banner.jpg');
-	background-position: 0;
-	background-size: cover;
-	height: 100px;
+body {
+	height: 100dvh;
+	margin: 0;
 }
 
-.container {
-	display: flex;
+header {
+	align-items: baseline;
+	border-bottom: var(--border-line);
+	justify-content: space-between;
+	margin: var(--margin-content);
+	padding: var(--padding-content);
 
-	& .feature-part {
-		width: 50%;
-
-		& p {
-			color: var(--color-secondary);
-		}
-	}
-
-	& img {
-		height: auto;
-		width: 100%;
+	& h1 {
+		margin: 0;
 	}
 }
 
-/* #banner-img {
-	height: 100px;
-	object-fit: cover;
-} */
+#sec-content {
+	margin: var(--margin-content);
+	text-align: justify;
+
+	& h2 {
+		font-size: var(--font-md);
+	}
+
+	& p {
+		font-size: var(--font-sm);
+	}
+}
+
+#sec-location {
+	background-color: var(--color-content);
+	color: var(--background);
+	padding: var(--padding-content);
+}
+
+#sec-online {
+	padding: var(--padding-content);
+}
 
 footer {
 	background-color: var(--background-footer);
-	height: 200px;
+	color: var(--color-secondary);
+	padding: var(--margin-content);
+
+	& p {
+		font-size: var(--font-sm);
+	}
 }
