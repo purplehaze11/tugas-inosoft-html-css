@@ -8,18 +8,24 @@
 	--font-lg: 5rem;
 	--font-md: 3.5rem;
 	--font-sm: 2rem;
-	--margin-content: 0 8rem; /* used for padding in footer */
+	--margin-content: 4rem 6rem;
 	--padding-content: 0 6rem;
+	--topbottom-space: 4rem 0;
 	--border-line: 2px solid #ec1224;
+	--shadow-color: 0deg 0% 60%;
+	--shadow-elevation-low: 0.8px 0.8px 1.3px hsl(var(--shadow-color) / 0.34),
+		1.2px 1.3px 2px -1.2px hsl(var(--shadow-color) / 0.34),
+		3px 3.2px 4.9px -2.5px hsl(var(--shadow-color) / 0.34);
 }
 
 /* CSS classes */
 
 .card {
 	background-color: var(--background-card);
-	border-radius: 50px;
+	border-radius: 20px;
 	color: var(--color-content);
 	padding: 2rem 6rem;
+	box-shadow: var(--shadow-elevation-low);
 }
 
 .flex {
@@ -38,8 +44,20 @@
 	font-size: var(--font-sm);
 }
 
+.center {
+	text-align: center;
+}
+
+.justify {
+	text-align: justify;
+}
+
 .primary {
 	color: var(--color-primary);
+}
+
+.rounded {
+	border-radius: 5px;
 }
 
 /*  */
@@ -60,17 +78,37 @@ header {
 	align-items: baseline;
 	border-bottom: var(--border-line);
 	justify-content: space-between;
-	margin: var(--margin-content);
+	margin: 0 6rem;
 	padding: var(--padding-content);
 
 	& h1 {
 		margin: 0;
 	}
+
+	& a {
+		margin: 0 1rem;
+		text-decoration: none;
+		color: var(--color-content);
+		transition: color 0.2s ease;
+	}
+
+	& a:hover {
+		color: var(--color-primary);
+	}
+}
+
+#banner {
+	margin: 4rem 0;
+
+	& img {
+		width: 100%;
+	}
 }
 
 #sec-content {
 	margin: var(--margin-content);
-	text-align: justify;
+	color: var(--color-content);
+	padding: 8rem 6rem;
 
 	& h2 {
 		font-size: var(--font-md);
@@ -79,22 +117,115 @@ header {
 	& p {
 		font-size: var(--font-sm);
 	}
+
+	#content1 {
+		padding-bottom: 2rem;
+		border-bottom: rgb(177, 177, 177) 1px solid;
+
+		& h2 {
+			margin: 0;
+		}
+
+		& div {
+			width: 50%;
+		}
+
+		& #img {
+			text-align: end;
+		}
+
+		& img {
+			width: 80%;
+		}
+	}
+
+	#content2 {
+		height: 300px;
+		margin: 4rem 0 4rem;
+		padding-bottom: 2rem;
+		border-bottom: rgb(177, 177, 177) 1px solid;
+
+		& h2 {
+			margin: 0;
+		}
+
+		& div {
+			width: 50%;
+		}
+
+		& img {
+			position: relative;
+			width: 50%;
+		}
+
+		& #img2 {
+			bottom: 20%;
+			left: 30%;
+		}
+	}
+
+	& #svg {
+		display: flex;
+		justify-content: space-evenly;
+		height: 80px;
+
+		& img {
+			padding: 10px;
+			border: var(--color-content) solid 4px;
+			border-radius: 10px;
+			width: 5%;
+		}
+	}
 }
 
 #sec-location {
-	background-color: var(--color-content);
+	background-color: #1a1a1a;
 	color: var(--background);
-	padding: var(--padding-content);
+	text-align: center;
+	margin: var(--topbottom-space);
+	padding: 0 8rem;
+
+	& div {
+		padding: var(--topbottom-space);
+	}
+
+	& span {
+		transition: color 0.2s ease;
+	}
+
+	& span:hover {
+		color: var(--color-primary);
+	}
 }
 
 #sec-online {
-	padding: var(--padding-content);
+	margin: var(--margin-content);
+	justify-content: space-between;
+
+	& div {
+		width: 45%;
+
+		& span {
+			background-color: var(--color-content);
+			color: #fff200;
+		}
+
+		& img {
+			width: 100%;
+		}
+	}
 }
 
 footer {
+	justify-content: space-between;
 	background-color: var(--background-footer);
 	color: var(--color-secondary);
-	padding: var(--margin-content);
+	margin-top: 4rem;
+	padding: 2rem 6rem;
+
+	& h2 {
+		font-size: var(--font-md);
+	}
 
 	& p {
 		font-size: var(--font-sm);
